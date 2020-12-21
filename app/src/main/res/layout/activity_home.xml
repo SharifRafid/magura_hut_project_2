@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.main.HomeActivity"
+    android:id="@+id/root"
+    android:background="#FFFFFF">
+
+
+    <LinearLayout
+        android:id="@+id/linear_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_top_bar"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_category" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/bangla_font_4"
+                android:gravity="center"
+                android:text="মাগুরা হাট"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="35sp"
+                android:visibility="visible"/>
+
+            <EditText
+                android:id="@+id/search_view"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="খুজুন :)"
+                android:imeOptions="actionDone"
+                android:visibility="gone"
+                android:singleLine="true"
+                android:inputType="textAutoComplete"
+                android:textColor="@color/primaryTextColor" />
+
+
+            <ImageView
+                android:id="@+id/search_start_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_search"
+                android:visibility="visible"/>
+            <ImageView
+                android:id="@+id/search_close_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_clear"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_message"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="12dp"
+        app:tint="#00796B"
+        app:backgroundTint="@color/primaryColor"
+        app:layout_constraintBottom_toBottomOf="@+id/drawer"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="invisible"
+        app:indicatorName="LineScalePulseOutRapidIndicator"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_top_bar" />
+
+
+    <LinearLayout
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/callNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_call"
+        android:fontFamily="@font/bangla_font_4"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=" কল করুন "
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/linFab"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"/>
+
+    <TextView
+        android:id="@+id/mr_more_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_menu"
+        android:fontFamily="@font/bangla_font_4"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=" অন্যান্য "
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/linFab"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_top_bar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:openDrawer="start">
+
+
+        <fragment
+            android:id="@+id/fragmentContainerMain"
+            android:name="com.dubd.magurahut.view.fragments.AllProducts"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/nav_header_height">
+
+                <LinearLayout
+                    android:id="@+id/tree_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/dailyShopTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:drawableLeft="@drawable/ic_shopping_cart"
+                        android:drawableTint="#FBC02D"
+                        android:fontFamily="@font/bangla_font_4"
+                        android:gravity="center"
+                        android:onClick="catVisibleClick"
+                        android:padding="5dp"
+                        android:text="ডেইলি শপ"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/dailyShopTitleLinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="baby care"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="বেবি কেয়ার"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Dairy"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="ডেইরি"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Cooking Oil"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="কুকিং ওয়েল"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Salt &amp;amp; Sugar"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="সল্ট এন্ড সুগার"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Health Care"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="হেলথ কেয়ার"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Home &amp;amp; Cleaning"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="হোম ও ক্লিনিং"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Fresh Fruits"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="ফেশ ফ্রুটস"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Cookies, Bakery &amp;amp; Snacks"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="বেকারি ও স্নাক্স"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Juice &amp;amp; Drinks"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="জুস ও ড্রিংকস"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/hotelTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:drawableLeft="@drawable/ic_restaurant"
+                        android:drawableTint="#C0CA33"
+                        android:fontFamily="@font/bangla_font_4"
+                        android:gravity="center"
+                        android:onClick="catVisibleClick"
+                        android:padding="5dp"
+                        android:text="হোটেল ও রেস্টুরেন্ট"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/hotelTitleLinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/sweetShopTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="baby-care"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catVisibleClick"
+                            android:padding="5dp"
+                            android:text="সুইট শপ"
+                            android:textColor="@color/secondaryDarkColor"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/sweetShopTitleLinear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="RAJSHAHI MISTANNO VANDAR - রাজশাহী মিষ্টান্ন ভাণ্ডার"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="রাজশাহী মিষ্টান্ন ভান্ডার"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Sugondha Sweet - সুগন্ধা সুইট"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="সুগন্ধা সুইটস"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/streetFoodsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catVisibleClick"
+                            android:padding="5dp"
+                            android:text="স্ট্রিট ফুড"
+                            android:textColor="@color/secondaryDarkColor"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/streetFoodsTitleLinear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="শফিক ভাইয়ের চটপটি"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="শফিক ভাইয়ের চটপটি"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="আলা কাকার কাবাব ঘর"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="আলি কাকার কাবাব"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/banglaRestaurantTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catVisibleClick"
+                            android:padding="5dp"
+                            android:text="বাংলা রেস্টুরেন্ট"
+                            android:textColor="@color/secondaryDarkColor"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/banglaRestaurantTitleLinear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Nanna Biriyani-নান্না বিরিয়ানী"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="নান্না বিরিয়ানি"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Jhontu Hotel &amp;amp; Restaurants - ঝন্টু হোটেল অ্যান্ড রেস্টুরেন্ট"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="ঝন্টু হোটেল এন্ড রেস্টুরেন্ট"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="জলযোগ"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="জলযোগ"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/chiniseRestaurant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catVisibleClick"
+                            android:padding="5dp"
+                            android:text="চাইনিজ রেস্টুরেন্ট"
+                            android:textColor="@color/secondaryDarkColor"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/chiniseRestaurantLinear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Kutumbari Chinese &amp;amp; Restaurant-কুটুমবাড়ি চাইনিজ &amp;amp; রেস্টুরেন্ট"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="কুটুমবাড়ি চাইনিজ রেস্টুরেন্ট"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Boithokkhana - বৈঠকখানা"
+                                android:fontFamily="@font/bangla_font_4"
+                                android:gravity="center"
+                                android:onClick="catClicked"
+                                android:padding="5dp"
+                                android:text="বৈঠকখানা"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/electronics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:drawableLeft="@drawable/ic_adb"
+                        android:drawableTint="#D81B60"
+                        android:fontFamily="@font/bangla_font_4"
+                        android:gravity="center"
+                        android:onClick="catVisibleClick"
+                        android:padding="5dp"
+                        android:text="ইলেকট্রনিকস"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/electronicsLinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="treamer"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="ট্রিমার"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="mobiles"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="মোবাইল"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="rice-cooker"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="রাইস কুকার"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Light"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="লাইট"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="fan"
+                            android:fontFamily="@font/bangla_font_4"
+                            android:gravity="center"
+                            android:onClick="catClicked"
+                            android:padding="5dp"
+                            android:text="ফ্যান"
+                            android:textColor="@color/secondaryTextColor"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/medicines"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:drawableLeft="@drawable/ic_support"
+                        android:drawableTint="#3949AB"
+                        android:fontFamily="@font/bangla_font_4"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="ঔষোধ"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <LinearLayout
+        android:id="@+id/linFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_custom_fab"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView">
+
+        <ImageView
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_shopping_cart"
+            app:tint="#00796B" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/mr_more_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linFab">
+
+        <TextView
+            android:id="@+id/mr_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_text"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:fontFamily="@font/bangla_font_4"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="  ফেসবুক "
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#3F51B5" />
+
+        <TextView
+            android:id="@+id/mr_wapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_text"
+            android:drawableLeft="@drawable/ic_wapps"
+            android:fontFamily="@font/bangla_font_4"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="  হোয়াটস্যাপ "
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#3D8F40" />
+
+        <TextView
+            android:id="@+id/mr_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_text"
+            android:drawableLeft="@drawable/ic_youtube"
+            android:fontFamily="@font/bangla_font_4"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="  ইউটিউব "
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#F44336" />
+
+
+        <TextView
+            android:id="@+id/mr_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_text"
+            android:drawableLeft="@drawable/ic_know_more"
+            android:fontFamily="@font/bangla_font_4"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="  আরও জানুন "
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#F57C00" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

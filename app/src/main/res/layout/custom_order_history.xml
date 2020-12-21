@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/bangla_font_4"
+    android:gravity="center"
+    android:padding="10dp"
+    android:text="মাটন পিজ্জা টাইটেল খুব সুস্বাদু উ উ"
+    android:textColor="@color/primaryLightColor"
+    android:textSize="20sp"
+    android:background="@drawable/rounded_bg_text"
+    android:backgroundTint="@color/secondaryDarkColor"
+    android:layout_margin="2dp"/>

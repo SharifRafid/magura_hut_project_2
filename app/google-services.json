@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "187489628272",
+    "firebase_url": "https://magura-hut.firebaseio.com",
+    "project_id": "magura-hut",
+    "storage_bucket": "magura-hut.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187489628272:android:e367c0165fd85926cf04b5",
+        "android_client_info": {
+          "package_name": "com.dubd.magurahut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187489628272-3hc1ttpm2unckp5v95kbqqlqe9v19dan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dubd.magurahut",
+            "certificate_hash": "9f659e36ca7473fdc0ba3a9864f857e8960d51a6"
+          }
+        },
+        {
+          "client_id": "187489628272-schgeq41bv8c2k305r17fiav1hc7nafv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRrtGhbFo3-hKy8kkUK2IgXT3RgrdvMq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187489628272-schgeq41bv8c2k305r17fiav1hc7nafv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

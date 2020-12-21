@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bangla_font_4"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="মাটন পিজ্জা টাইটেল খুব সুস্বাদু উ উ"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="25sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_main_container"
+            app:layout_constraintTop_toTopOf="@id/img_main_container" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/img_main_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_main_container"
+            app:layout_constraintTop_toBottomOf="@+id/mainText">
+
+            <TextView
+                android:id="@+id/priceTextSell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/main_bangla_font"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="৳70"
+                android:textColor="#6CC534"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_rating"
+                android:drawableTint="#FBC02D"
+                android:fontFamily="@font/main_bangla_font"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text=" 5.0"
+                android:textColor="#FBC02D"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/circularButton1"
+            app:layout_constraintEnd_toStartOf="@+id/addToCart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/addToCart">
+
+            <ImageView
+                android:id="@+id/imgMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:src="@drawable/ic_minus"
+                app:tint="@color/secondaryColor" />
+
+            <TextView
+                android:id="@+id/productCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/main_bangla_font"
+                android:gravity="center"
+                android:paddingLeft="18dp"
+                android:paddingTop="10dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="10dp"
+                android:text="1"
+                android:textColor="#FBC02D"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/imgAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/circularButton1"
+                android:padding="15dp"
+                android:src="@drawable/ic_add"
+                app:tint="@color/secondaryColor" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/bangla_font_4"
+            android:padding="8dp"
+            android:text="কার্টে যোগ করুন"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_main_container"
+            app:layout_constraintTop_toBottomOf="@+id/img_main_container" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_main_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_main"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/img_product_test" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addToCart">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <co.lujun.androidtagview.TagContainerLayout
+                android:id="@+id/tagView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:padding="10dp"
+                app:container_enable_drag="false"
+                app:horizontal_interval="5dp"
+                app:tag_theme="random"
+                app:vertical_interval="5dp" />
+
+            <TextView
+                android:id="@+id/descText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bangla_font_4"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="মাটন পিজ্জা টাইটেল খুব সুস্বাদু উ উ ডেস্ক্রিপশন"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
